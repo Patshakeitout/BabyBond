@@ -1,0 +1,44 @@
+mat-toolbar, mat-button {
+    height: 56px;
+}
+
+#menuTitle {
+    color: #363714;
+    font-size: larger;
+    margin-right: 20px;
+}
+
+
+.mat-mdc-button {
+    font-size: 16px;
+}
+
+.mat-toolbar.mat-primary {
+    --mat-toolbar-container-text-color: #363714;
+}
+
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+@media (min-width: 877px) {
+    #menuIcon {
+        display: none;
+    }
+}
+
+@media (max-width: 877px) {
+
+}
+
+.logo-image {
+    height: 100%;
+    /* Ensures the image height matches the toolbar's height */
+    max-height: 172px;
+    /* Optional: Set a max height to avoid the image becoming too large */
+    object-fit: contain;
+    /* Maintains the aspect ratio of the image */
+    margin-right: 16px;
+    /* Adds some space between the logo and the next element */
+}

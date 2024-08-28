@@ -8,33 +8,33 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
-// Define a custom primary palette using #b9dca4
+// Define a custom primary palette using #b9dca4 as the 500 shade
 $BabyBond-primary: mat.define-palette((
   50: #f0f7ec,
   100: #d9e9d1,
-  200: #b9dca4, // The primary color
-  300: #a6ce87,
-  400: #93c171,
-  500: #7fb35b,
-  600: #77ac54,
-  700: #6ba24a,
-  800: #609841,
-  900: #4d8a30,
+  200: #c8e0b8,
+  300: #add593,
+  400: #99ca76,
+  500: #b9dca4, // Primary color used for toolbar and other components
+  600: #a2c88f,
+  700: #8eb37d,
+  800: #7a9e6b,
+  900: #608353,
   A100: #e6ffe6,
   A200: #ccffcc,
   A400: #b2ffb2,
   A700: #99ff99,
   contrast: (
-    50: rgba(0, 0, 0, 0.87), // Black with 87% opacity
+    50: rgba(0, 0, 0, 0.87),
     100: rgba(0, 0, 0, 0.87),
     200: rgba(0, 0, 0, 0.87),
     300: rgba(0, 0, 0, 0.87),
     400: rgba(0, 0, 0, 0.87),
-    500: rgba(0, 0, 0, 0.87),
+    500: rgba(0, 0, 0, 0.87), // Contrast color for primary
     600: rgba(0, 0, 0, 0.87),
     700: rgba(0, 0, 0, 0.87),
     800: rgba(0, 0, 0, 0.87),
-    900: rgba(255, 255, 255, 0.87), // White with 87% opacity for the darkest shades
+    900: rgba(255, 255, 255, 0.87), // Contrast color for darker shades
     A100: rgba(0, 0, 0, 0.87),
     A200: rgba(0, 0, 0, 0.87),
     A400: rgba(0, 0, 0, 0.87),
@@ -64,6 +64,12 @@ $BabyBond-theme: mat.define-light-theme((
 @include mat.all-component-themes($BabyBond-theme);
 
 /* You can add global styles to this file, and also import other style files */
+
+// Set the toolbar background to the primary color
+.mat-toolbar {
+  background-color: mat.get-color-from-palette($BabyBond-primary, 500); 
+  color: mat.get-contrast-color-from-palette($BabyBond-primary, 500); // Ensures text contrast
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

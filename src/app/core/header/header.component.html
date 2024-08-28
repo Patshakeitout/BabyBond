@@ -1,1 +1,21 @@
-<p>header works!</p>
+<mat-toolbar color="primary">
+
+    <span id="menuTitle">Stillbegleitung IZ</span>
+
+    <a mat-button class="top-menu-item">HOME</a>
+    <a mat-button class="top-menu-item">STILLBEGLEITUNG</a>
+    <a mat-button class="top-menu-item">BABYGELEITETE BEIKOST</a>
+    <a mat-button class="top-menu-item">TRAGEBERATUNG</a>
+
+    <span class="example-spacer"></span>
+
+    <button mat-icon-button id="menuIcon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened>Sidenav content</mat-sidenav>
+    <mat-sidenav-content>Main content</mat-sidenav-content>
+</mat-sidenav-container>
