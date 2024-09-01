@@ -7,6 +7,11 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { HomeModule } from './home/home.module';
+import { StillbegleitungModule } from './stillbegleitung/stillbegleitung.module';
+import { BeikostModule } from './beikost/beikost.module';
+import { TrageberatungModule } from './trageberatung/trageberatung.module';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +21,11 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    HomeModule,
+    StillbegleitungModule,
+    BeikostModule,
+    TrageberatungModule
   ],
   providers: [
     provideClientHydration(),
