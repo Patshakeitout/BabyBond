@@ -1,0 +1,101 @@
+/* Global footer styles */
+.footer {
+  position: relative;
+  background-color: #cfd721;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+  justify-content: space-between; /* Position left and right sections */
+  align-items: flex-start; /* Align items at the top for widescreen */
+  gap: 1rem; /* Space between sections */
+}
+
+/* Left Section */
+.footer-left {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  text-align: left;
+  flex: 1; /* Ensure it stays on the left */
+}
+
+p {
+  margin-top: auto;  // forces the paragraph to the bottom
+}
+
+/* Center Section (Logo and Navigation) */
+.footer-center {
+  display: flex;
+  flex-direction: column; /* Stack logo and navigation vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center;
+  flex: 2; /* Ensure it stays in the center */
+  gap: 1rem; /* Space between logo and navigation */
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.logo-container img {
+  height: 6rem;
+}
+
+/* Navigation Section */
+.footer-nav {
+  display: flex;
+  justify-content: center; /* Center the navigation links */
+  gap: 1rem; /* Space between nav links */
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  /*font-weight: bold;*/
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+/*
+.footer-left {
+  font-weight: bold;
+}*/
+
+/* Right Section */
+.footer-right {
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+  text-align: right;
+  flex: 1; /* Ensure it stays on the right */
+
+}
+
+/* Mobile-first layout */
+@media screen and (max-width: 931px) {
+  .footer {
+    flex-direction: column; /* Stack all sections vertically */
+    align-items: center; /* Center all content */
+  }
+
+  .footer-left,
+  .footer-right {
+    width: 100%; /* Full width for smaller screens */
+    text-align: center;
+  }
+
+  .footer-center {
+    gap: 1rem;
+    width: 100%; /* Full width for better alignment */
+  }
+
+  .footer-nav {
+    flex-wrap: wrap; /* Allow nav links to wrap if necessary */
+  }
+}

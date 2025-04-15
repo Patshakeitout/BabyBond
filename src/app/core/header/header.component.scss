@@ -1,20 +1,75 @@
-mat-toolbar, mat-button {
+mat-toolbar,
+mat-button {
     height: 56px;
 }
 
 #menuTitle {
-    color: #363714;
-    font-size: larger;
+    max-height: 40px;
+    width: auto;
+    vertical-align: middle;
     margin-right: 20px;
 }
-
 
 .mat-mdc-button {
     font-size: 16px;
 }
 
 .mat-toolbar.mat-primary {
-    --mat-toolbar-container-text-color: #363714;
+    --mat-toolbar-container-text-color: #367714;
+}
+
+.mat-sidenav {
+    background-color: #b9dca4;
+    width: 100%;
+}
+
+.mat-mdc-button:not(:disabled) {
+    color: #367714;
+}
+
+.mat-sidenav h2 {
+    padding-left: 30px;
+    color: #367714;
+}
+
+.side-nav {
+    padding-left: 30px;
+}
+
+.side-nav-items {
+    list-style-type: disc;
+    padding-left: 20px; /* Adjusts indentation for the dots */
+}
+
+.side-nav-items li {
+    margin-bottom: 20px; /* Adds space between each menu item */
+    color:#367714;
+}
+
+.side-menu-item {
+    text-decoration: none;
+    font-family: 'Lato Black', sans-serif;
+}
+
+.custom-icon img {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    font-size: 1.125rem;
+    height: 1.125rem;
+    width: 1.125rem;
+    background-size: contain; // Ensures the image fits within the width/height
+    background-repeat: no-repeat;
+    background-position: center; // Centers the PNG inside the icon area
+    // Use Material Design CSS variables for margin
+    margin-right: var(--mat-text-button-icon-spacing, 8px);
+    margin-left: var(--mat-text-button-icon-offset, 0);
+}
+
+.lato-black {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
 }
 
 
@@ -22,14 +77,68 @@ mat-toolbar, mat-button {
     flex: 1 1 auto;
 }
 
-@media (min-width: 877px) {
+header {
+    font-family: 'Lato', sans-serif;
+    text-align: left;
+    color: #60a9ba;
+    margin: 0;
+}
+
+p {
+    margin: 0; /* Remove margin from all elements in the header */
+}
+
+.headline {
+    font-weight: 900;
+    font-size: 0.9rem;
+    letter-spacing: 0.2rem;
+    line-height: 1.1;
+}
+
+.subtext {
+    margin: 0;
+    font-weight: 550;
+    font-size: 0.5rem;
+    color: #FFF;
+    letter-spacing: 0.42rem;
+    line-height: 1.1;
+}
+
+.services {
+    font-size: 0.5rem;
+    font-weight: 550;
+    color: #60a9ba;
+    letter-spacing: 0.109rem;
+    line-height: 1.2
+}
+
+.highlight {
+    color: #FFF;
+}
+
+.dark {
+    color: #60a9ba;
+}
+
+
+@media (min-width: 1031px) {
     #menuIcon {
+        display: none;
+    }
+
+    .mat-sidenav {
+        display: none;
+    }
+
+    header {
         display: none;
     }
 }
 
-@media (max-width: 877px) {
-
+@media (max-width: 1031px) {
+    .top-menu-item {
+        display: none;
+    }
 }
 
 .logo-image {

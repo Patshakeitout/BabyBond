@@ -1,0 +1,43 @@
+
+header {
+    font-family: 'Lato', sans-serif;
+    text-align: left;
+    color: #60a9ba;
+    margin: 0;
+}
+
+p {
+    margin: 0; /* Remove margin from all elements in the header */
+}
+
+.headline {
+    font-weight: 900;
+    font-size: 0.9rem;
+    letter-spacing: 0.2rem;
+    line-height: 1.1;
+}
+
+.subtext {
+    margin: 0;
+    font-weight: 550;
+    font-size: 0.5rem;
+    color: #FFF;
+    letter-spacing: 0.42rem;
+    line-height: 1.1;
+}
+
+.services {
+    font-size: 0.5rem;
+    font-weight: 550;
+    color: #60a9ba;
+    letter-spacing: 0.109rem;
+    line-height: 1.2
+}
+
+.highlight {
+    color: #FFF;
+}
+
+.dark {
+    color: #60a9ba;
+}

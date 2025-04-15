@@ -1,28 +1,76 @@
 <mat-toolbar color="primary">
 
-    <span id="menuTitle">Stillbegleitung IZ</span>
+    <img id="menuTitle" src="../../../favicon.gif" routerLink="/" routerLinkActive="active-link">
 
-    <a mat-button class="top-menu-item" routerLink="/" routerLinkActive="active-link">HOME</a>
-    <a mat-button class="top-menu-item" routerLink="/stillbegleitung" routerLinkActive="active-link">STILLBEGLEITUNG</a>
-    <a mat-button class="top-menu-item" routerLink="/beikost" routerLinkActive="active-link">BABYGELEITETE BEIKOST</a>
-    <a mat-button class="top-menu-item" routerLink="/trageberatung" routerLinkActive="active-link">TRAGEBERATUNG</a>   
+    <app-header-logo></app-header-logo>
+
+    <a mat-button class="top-menu-item lato-black" routerLink="/" routerLinkActive="active-link">
+        <mat-icon>home</mat-icon>
+        HOME
+    </a>
+    <a mat-button class="top-menu-item lato-black" routerLink="/stillbegleitung" routerLinkActive="active-link">
+        <mat-icon class="custom-icon"><img src="../../../assets/breastfeeding.png" alt="Breastfeeding Icon"></mat-icon>
+        STILLBEGLEITUNG
+    </a>
+    <a mat-button class="top-menu-item lato-black" routerLink="/beikost" routerLinkActive="active-link">
+        <mat-icon class="custom-icon"><img src="../../../assets/feeding.png" alt="Breastfeeding Icon"></mat-icon>
+        BABYGELEITETE BEIKOST
+    </a>
+    <a mat-button class="top-menu-item lato-black" routerLink="/trageberatung" routerLinkActive="active-link">
+        <mat-icon class="custom-icon"><img src="../../../assets/baby-carrier.png" alt="Breastfeeding Icon"></mat-icon>
+        TRAGEBERATUNG
+    </a>
 
     <span class="example-spacer"></span>
 
-    <button mat-icon-button id="menuIcon" aria-label="Example icon-button with menu icon">
+    <button mat-icon-button (click)="sidenav.toggle()" id="menuIcon" aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
     </button>
 
 </mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav [fixedInViewport]="true" [fixedTopGap]="56" mode="side">
+        <h2>Menü</h2>
+        <nav class="side-nav">
+            <ul class="side-nav-items">
+                <li>
+                    <a mat-button (click)="sidenav.close()" class="side-menu-item lato-black" routerLink="/"
+                        routerLinkActive="active-link">
+                        HOME
+                    </a>
+                </li>
+                <li>
+                    <a mat-button (click)="sidenav.close()" class="side-menu-item lato-black"
+                        routerLink="/stillbegleitung" routerLinkActive="active-link">
+                        STILLBEGLEITUNG
+                    </a>
+                </li>
+                <li>
+                    <a mat-button (click)="sidenav.close()" class="side-menu-item lato-black" routerLink="/beikost"
+                        routerLinkActive="active-link">
+                        BABYGELEITETE BEIKOST
+                    </a>
+                </li>
+                <li>
+                    <a mat-button (click)="sidenav.close()" class="side-menu-item lato-black"
+                        routerLink="/trageberatung" routerLinkActive="active-link">
+                        TRAGEBERATUNG
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet>
+        </router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
 
 
 <!--
 toDo:
 - responsive navbar
 - footer
-
-<mat-sidenav-container+>
-    <mat-sidenav mode="side" opened>Sidenav content</mat-sidenav>
-    <mat-sidenav-content>Main content</mat-sidenav-content>
-</mat-sidenav-container>
 -->
