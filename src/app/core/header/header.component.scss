@@ -1,3 +1,9 @@
+/* Variables */
+$primary: #2a5d7c;
+$accent: #9bc1c9;
+$text: #222;
+$bg: #fdfdfd;
+
 mat-toolbar,
 mat-button {
     height: 56px;
@@ -30,6 +36,15 @@ mat-button {
 .mat-sidenav h2 {
     padding-left: 30px;
     color: #367714;
+}
+
+
+.mat-sidenav-content {
+    font-family: "Lato", sans-serif;
+    padding: 1rem 4.5rem;
+    color: $text;
+    background: $bg;
+    line-height: 1.6;
 }
 
 .side-nav {

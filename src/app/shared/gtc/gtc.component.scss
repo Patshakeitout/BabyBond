@@ -1,0 +1,54 @@
+  h2 {
+    font-size: 4rem;
+    margin: 2rem 0 1rem;
+    padding-left: .75rem;
+    color: $primary;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+
+  p {
+    margin-bottom: 1rem;
+
+    strong {
+      color: $primary;
+      font-weight: 600;
+    }
+  }
+
+  ul {
+    margin: 0 0 1.25rem 1.25rem;
+    padding: 0;
+    list-style: disc;
+
+    li {
+      margin-bottom: .5rem;
+
+      &::marker {
+        color: $primary;
+      }
+
+      ul {
+        list-style: circle;
+        margin-top: .5rem;
+      }
+    }
+  }
+
+  a {
+    color: $primary;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      color: darken($primary, 10%);
+    }
+  }
+
+/* Larger screens */
+@media (min-width: 768px) {
+    h2 {
+      font-size: 1.75rem;
+    }
+  }
+
