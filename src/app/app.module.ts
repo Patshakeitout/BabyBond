@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
-import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { StillbegleitungModule } from './stillbegleitung/stillbegleitung.module';
@@ -20,7 +19,6 @@ import { TrageberatungModule } from './trageberatung/trageberatung.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule,
     SharedModule,
     HomeModule,
     StillbegleitungModule,
