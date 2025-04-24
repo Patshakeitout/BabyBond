@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 
 @Component({
@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-
+  /** Fires when the user clicks the menu icon */
+  @Output() menuToggle = new EventEmitter<void>();
 }

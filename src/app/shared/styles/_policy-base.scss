@@ -1,0 +1,53 @@
+/* src/app/shared/styles/_policy-base.scss */
+
+/* -------------- Import math module for safe division -------------- */
+@use "sass:math";
+
+/* ---------- Variables ---------- */
+$font-scale-h2: 1.25rem;          // heading size
+$space-lg: 2rem;                  // top margin for h2
+$space-md: 0.75rem;               // base spacing unit
+
+/* ---------- Headings ---------- */
+h2 {
+  margin-top: $space-lg + 0.2rem; // subtle offset for rhythm
+  font-size: $font-scale-h2;
+  line-height: 1.3;
+}
+
+/* ---------- Definition List ---------- */
+dl {
+  margin: 0;
+  padding: 0;
+
+  dt {
+    font-weight: 600;
+    margin-top: $space-md;        // space above each term
+  }
+
+  dd {
+    margin: math.div($space-md, 3) 0 $space-md
+            calc(#{$space-md} * 1.7);
+    line-height: 1.45;            // comfortable reading
+  }
+}
+
+/* Highlight for Art-9 data categories */
+.special-category {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* ---------- Placeholder Text ---------- */
+em.placeholder {
+  font-style: italic;
+  color: #666;
+}
+
+/* ---------- Small-screen tweaks ---------- */
+@media (max-width: 600px) {
+  h2 {
+    font-size: 1.1rem;
+    margin-top: $space-md * 2;
+  }
+}

@@ -1,17 +1,17 @@
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
+/* If you’re using ViewEncapsulation.Emulated (default), you can use ::ng-deep
+   to pierce through to the Material component’s element: */
+:host ::ng-deep mat-sidenav-content {
   display: flex;
   flex-direction: column;
+  min-height: 100%;
 }
-  
-  main {
-    flex: 1; // Takes all remaining vertical space, pushing footer down
-    padding: 2rem;
-  }
-  
+
+main {
+  flex: 1 0 auto;
+  padding: 0 4.6rem;
+  margin: 0 auto;
+}
+
+app-footer {
+  flex-shrink: 0;
+}

@@ -1,7 +1,46 @@
-<app-header></app-header>
+<mat-sidenav-container>
 
-<main>
-    <router-outlet></router-outlet>
-</main>
+    <mat-sidenav #sidenav [fixedInViewport]="true" [fixedTopGap]="56" mode="side">
+        <h2>Menü</h2>
+        <nav class="side-nav">
+            <ul class="side-nav-items">
+                <li>
+                    <a mat-button (click)="sidenav.close()" class="side-menu-item lato-black" routerLink="/"
+                        routerLinkActive="active-link">
+                        HOME
+                    </a>
+                </li>
+                <li>
+                    <a mat-button (click)="sidenav.close()" class="side-menu-item lato-black"
+                        routerLink="/stillbegleitung" routerLinkActive="active-link">
+                        STILLBEGLEITUNG
+                    </a>
+                </li>
+                <li>
+                    <a mat-button (click)="sidenav.close()" class="side-menu-item lato-black" routerLink="/beikost"
+                        routerLinkActive="active-link">
+                        BABYGELEITETE BEIKOST
+                    </a>
+                </li>
+                <li>
+                    <a mat-button (click)="sidenav.close()" class="side-menu-item lato-black"
+                        routerLink="/trageberatung" routerLinkActive="active-link">
+                        TRAGEBERATUNG
+                    </a>
+                </li>
+            </ul>
+        </nav>
 
-<app-footer></app-footer>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <app-header (menuToggle)="sidenav.toggle()"></app-header>
+    
+        <main>
+          <router-outlet></router-outlet>
+        </main>
+    
+        <app-footer></app-footer>
+    </mat-sidenav-content>
+    
+</mat-sidenav-container>

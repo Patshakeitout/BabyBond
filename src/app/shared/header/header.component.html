@@ -23,50 +23,10 @@
 
     <span class="example-spacer"></span>
 
-    <button mat-icon-button (click)="sidenav.toggle()" id="menuIcon" aria-label="Example icon-button with menu icon">
+    <button mat-icon-button (click)="menuToggle.emit()" id="menuIcon" aria-label="Toggle sidenav">
         <mat-icon>menu</mat-icon>
     </button>
 
 </mat-toolbar>
 
-<mat-sidenav-container>
 
-    <mat-sidenav #sidenav [fixedInViewport]="true" [fixedTopGap]="56" mode="side">
-        <h2>Menü</h2>
-        <nav class="side-nav">
-            <ul class="side-nav-items">
-                <li>
-                    <a mat-button (click)="sidenav.close()" class="side-menu-item lato-black" routerLink="/"
-                        routerLinkActive="active-link">
-                        HOME
-                    </a>
-                </li>
-                <li>
-                    <a mat-button (click)="sidenav.close()" class="side-menu-item lato-black"
-                        routerLink="/stillbegleitung" routerLinkActive="active-link">
-                        STILLBEGLEITUNG
-                    </a>
-                </li>
-                <li>
-                    <a mat-button (click)="sidenav.close()" class="side-menu-item lato-black" routerLink="/beikost"
-                        routerLinkActive="active-link">
-                        BABYGELEITETE BEIKOST
-                    </a>
-                </li>
-                <li>
-                    <a mat-button (click)="sidenav.close()" class="side-menu-item lato-black"
-                        routerLink="/trageberatung" routerLinkActive="active-link">
-                        TRAGEBERATUNG
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-    </mat-sidenav>
-
-    <mat-sidenav-content>
-        <router-outlet>
-        </router-outlet>
-    </mat-sidenav-content>
-    
-</mat-sidenav-container>

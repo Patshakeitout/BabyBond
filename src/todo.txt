@@ -1,0 +1,6 @@
+- sticky header
+- underline hover menu
+- home -> logo
+- more space in header
+
+

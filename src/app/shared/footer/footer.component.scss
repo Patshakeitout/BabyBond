@@ -1,101 +1,118 @@
-/* Global footer styles */
+/* ─── palette ─── */
+$footer-bg : #cfd721;
+$footer-text : #367714;
+$footer-link : $footer-text;
+$footer-link-hover : darken($footer-text, 15%);
+
+/* ─── footer ─── */
 .footer {
-  position: relative;
-  background-color: #cfd721;
-  color: white;
+  display: flex;
+  flex-wrap: wrap; // make a new line
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
   padding: 1rem;
-  display: flex;
-  flex-wrap: wrap; /* Allows wrapping for smaller screens */
-  justify-content: space-between; /* Position left and right sections */
-  align-items: flex-start; /* Align items at the top for widescreen */
-  gap: 1rem; /* Space between sections */
-}
 
-/* Left Section */
-.footer-left {
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  text-align: left;
-  flex: 1; /* Ensure it stays on the left */
-}
+  background: $footer-bg;
+  color: $footer-text;
 
-p {
-  margin-top: auto;  // forces the paragraph to the bottom
-}
+  /* generic columns */
+  >section {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
 
-/* Center Section (Logo and Navigation) */
-.footer-center {
-  display: flex;
-  flex-direction: column; /* Stack logo and navigation vertically */
-  align-items: center; /* Center horizontally */
-  text-align: center;
-  flex: 2; /* Ensure it stays in the center */
-  gap: 1rem; /* Space between logo and navigation */
-}
-
-.logo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-}
-
-.logo-container img {
-  height: 6rem;
-}
-
-/* Navigation Section */
-.footer-nav {
-  display: flex;
-  justify-content: center; /* Center the navigation links */
-  gap: 1rem; /* Space between nav links */
-}
-
-.footer-link {
-  color: white;
-  text-decoration: none;
-  /*font-weight: bold;*/
-}
-
-.footer-link:hover {
-  text-decoration: underline;
-}
-
-/*
-.footer-left {
-  font-weight: bold;
-}*/
-
-/* Right Section */
-.footer-right {
-  position: absolute;
-  bottom: 0;
-  right: 1rem;
-  text-align: right;
-  flex: 1; /* Ensure it stays on the right */
-
-}
-
-/* Mobile-first layout */
-@media screen and (max-width: 931px) {
-  .footer {
-    flex-direction: column; /* Stack all sections vertically */
-    align-items: center; /* Center all content */
+    // push any <p> to the bottom (margin-top: auto;)
+    p {
+      margin: auto 0 0 0;
+    }
   }
 
-  .footer-left,
+  /* left / right specific alignment */
+  .footer-left {
+    text-align: left;
+  }
+
   .footer-right {
-    width: 100%; /* Full width for smaller screens */
-    text-align: center;
+    text-align: right;
+    align-items: flex-end;
   }
 
+  /* centre column */
   .footer-center {
+    flex: 2 1 400px;
+    align-items: center;
+    text-align: center;
     gap: 1rem;
-    width: 100%; /* Full width for better alignment */
+
+    .logo-container img {
+      height: 8rem;
+    }
+
+    // enlarged logo (desktop)
+
+    .footer-nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: auto; // nav sits at the very bottom of centre column
+    }
   }
 
-  .footer-nav {
-    flex-wrap: wrap; /* Allow nav links to wrap if necessary */
+  /* ─── links ─── */
+  a {
+    color: $footer-link;
+    text-decoration: none;
+    position: relative;
+
+    // animated underline
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0%;
+      height: 2px;
+      background: currentColor;
+      transition: width .3s ease, background-color .3s ease;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: $footer-link-hover;
+
+      &::after {
+        width: 100%;
+        background: $footer-link-hover;
+      }
+    }
+  }
+
+  /* ─── mobile ─── */
+  @media (max-width: 931px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    // tighter spacing & padding for smaller screens
+    gap: .5rem;
+    padding: .75rem;
+
+    >section {
+      flex: 1 1 100%;
+      align-items: center; // override right‑align on small screens
+    }
+
+    // smaller logo for mobile to keep footer compact
+    .footer-center {
+      .logo-container img {
+        height: 5rem;
+      }
+    }
+
+    .footer-right {
+      text-align: center;
+    }
   }
 }
