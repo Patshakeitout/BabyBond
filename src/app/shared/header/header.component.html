@@ -1,13 +1,11 @@
 <mat-toolbar color="primary">
 
-    <img id="menuTitle" src="../../../favicon.gif" routerLink="/" routerLinkActive="active-link">
+    <img id="logo" src="../../../favicon.gif" routerLink="/" routerLinkActive="active-link">
 
     <app-header-logo></app-header-logo>
 
-    <a mat-button class="top-menu-item lato-black" routerLink="/" routerLinkActive="active-link">
-        <mat-icon>home</mat-icon>
-        HOME
-    </a>
+    <span class="example-spacer"></span>
+
     <a mat-button class="top-menu-item lato-black" routerLink="/stillbegleitung" routerLinkActive="active-link">
         <mat-icon class="custom-icon"><img src="../../../assets/breastfeeding.png" alt="Breastfeeding Icon"></mat-icon>
         STILLBEGLEITUNG
@@ -20,8 +18,6 @@
         <mat-icon class="custom-icon"><img src="../../../assets/baby-carrier.png" alt="Breastfeeding Icon"></mat-icon>
         TRAGEBERATUNG
     </a>
-
-    <span class="example-spacer"></span>
 
     <button mat-icon-button (click)="menuToggle.emit()" id="menuIcon" aria-label="Toggle sidenav">
         <mat-icon>menu</mat-icon>

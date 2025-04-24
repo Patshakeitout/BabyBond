@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { SharedModule } from './shared/shared.module';
-import { HomeModule } from './home/home.module';
+import { LandingModule } from './landing/landing.module';
 import { StillbegleitungModule } from './stillbegleitung/stillbegleitung.module';
 import { BeikostModule } from './beikost/beikost.module';
 import { TrageberatungModule } from './trageberatung/trageberatung.module';
@@ -21,7 +21,7 @@ import { TrageberatungModule } from './trageberatung/trageberatung.module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    HomeModule,
+    LandingModule,
     StillbegleitungModule,
     BeikostModule,
     TrageberatungModule

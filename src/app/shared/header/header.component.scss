@@ -6,14 +6,14 @@ $bg: #fdfdfd;
 
 mat-toolbar,
 mat-button {
-    height: 56px;
+    height: 58px;
 }
 
-#menuTitle {
-    max-height: 40px;
-    width: auto;
-    vertical-align: middle;
-    margin-right: 20px;
+#logo {
+    max-height: 73px;
+    margin-top: 20px;
+    margin-right: 7px;
+    cursor: pointer;
 }
 
 .mat-mdc-button {
@@ -136,7 +136,7 @@ p {
 }
 
 
-@media (min-width: 1031px) {
+@media (min-width: 957px) {
     #menuIcon {
         display: none;
     }
@@ -150,7 +150,7 @@ p {
     }
 }
 
-@media (max-width: 1031px) {
+@media (max-width: 957px) {
     .top-menu-item {
         display: none;
     }

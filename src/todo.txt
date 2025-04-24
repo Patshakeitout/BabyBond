@@ -1,6 +1,6 @@
-- sticky header
+- sticky header (?)
 - underline hover menu
-- home -> logo
-- more space in header
+- shadow header and logo
+- mobile menu color
 
 

@@ -40,7 +40,7 @@ $footer-link-hover : darken($footer-text, 15%);
 
   /* centre column */
   .footer-center {
-    flex: 2 1 400px;
+    flex: 2 1 200px;
     align-items: center;
     text-align: center;
     gap: 1rem;
@@ -107,7 +107,7 @@ $footer-link-hover : darken($footer-text, 15%);
     // smaller logo for mobile to keep footer compact
     .footer-center {
       .logo-container img {
-        height: 5rem;
+        height: 8rem;
       }
     }
 
