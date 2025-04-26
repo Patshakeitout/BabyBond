@@ -1,6 +1,5 @@
 - sticky header (?)
-- underline hover menu
 - shadow header and logo
 - mobile menu color
-
+- Home Bild
 

@@ -9,4 +9,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class HeaderComponent {
   /** Fires when the user clicks the menu icon */
   @Output() menuToggle = new EventEmitter<void>();
+
+  linksVisible = true;
+
+  toggleMenu() {
+    this.menuToggle.emit();
+    this.linksVisible = !this.linksVisible;
+  }
+
 }

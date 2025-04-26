@@ -15,3 +15,40 @@ main {
 app-footer {
   flex-shrink: 0;
 }
+
+.mat-sidenav {
+  background-color: #b9dca4;
+  width: 17.5%;  
+}
+
+.mat-sidenav h2 {
+  color: #367714;
+  padding-left: 1.2rem;
+  padding-top: 1.2rem;
+}
+
+/* Sidenav lists */
+.side-nav {
+  padding-left: 1.2rem;
+}
+
+.side-nav-items {
+  list-style-type: disc;
+  padding-left: 20px; /* Adjusts indentation for the dots */
+}
+
+.side-nav-items li {
+  margin-bottom: 20px; /* Adds space between each menu item */
+  color:#367714;
+}
+
+.side-menu-item {
+  text-decoration: none;
+  font-family: 'Lato Black', sans-serif;
+  font-weight: bold;
+}
+
+/* Default mat-button color */
+.mat-mdc-button:not(:disabled) {
+  color: #367714;
+}

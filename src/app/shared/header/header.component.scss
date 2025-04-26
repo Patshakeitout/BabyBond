@@ -9,6 +9,7 @@ mat-button {
     height: 58px;
 }
 
+/* Logo */
 #logo {
     max-height: 73px;
     margin-top: 20px;
@@ -21,24 +22,11 @@ mat-button {
 }
 
 .mat-toolbar.mat-primary {
-    --mat-toolbar-container-text-color: #367714;
-}
-
-.mat-sidenav {
     background-color: #b9dca4;
-    width: 100%;
+    --mat-toolbar-container-text-color: #367714; // menu text
 }
 
-.mat-mdc-button:not(:disabled) {
-    color: #367714;
-}
-
-.mat-sidenav h2 {
-    padding-left: 30px;
-    color: #367714;
-}
-
-
+/* Content area */
 .mat-sidenav-content {
     font-family: "Lato", sans-serif;
     padding: 1rem 4.5rem;
@@ -47,32 +35,26 @@ mat-button {
     line-height: 1.6;
 }
 
-.side-nav {
-    padding-left: 30px;
+/* Default mat-button color */
+.mat-mdc-button:not(:disabled) {
+    color: #367714;
 }
 
-.side-nav-items {
-    list-style-type: disc;
-    padding-left: 20px; /* Adjusts indentation for the dots */
+/* Utility & typography */
+.lato-black {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
 }
 
-.side-nav-items li {
-    margin-bottom: 20px; /* Adds space between each menu item */
-    color:#367714;
-}
-
-.side-menu-item {
-    text-decoration: none;
-    font-family: 'Lato Black', sans-serif;
-}
 
 .custom-icon img {
     display: inline-block;
     position: relative;
     vertical-align: top;
-    font-size: 1.125rem;
-    height: 1.125rem;
-    width: 1.125rem;
+    font-size: 1.2rem;
+    height: 1.2rem;
+    width: 1.2rem;
     background-size: contain; // Ensures the image fits within the width/height
     background-repeat: no-repeat;
     background-position: center; // Centers the PNG inside the icon area
@@ -81,66 +63,73 @@ mat-button {
     margin-left: var(--mat-text-button-icon-offset, 0);
 }
 
-.lato-black {
-    font-family: "Lato", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-}
-
-
 .example-spacer {
     flex: 1 1 auto;
 }
 
-header {
-    font-family: 'Lato', sans-serif;
-    text-align: left;
-    color: #60a9ba;
-    margin: 0;
+/* Logo image sizing */
+.logo-image {
+    height: 100%;
+    max-height: 172px;
+    object-fit: contain;
+    margin-right: 16px;
 }
 
-p {
-    margin: 0; /* Remove margin from all elements in the header */
-}
+/* === Top-menu hover & underline effect === */
+.top-menu-item {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.2rem;
+    padding: 0.75rem 0.75rem;
+    margin-right: 1rem;
+    color: #367714;                    /* default text */
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
-.headline {
-    font-weight: 900;
-    font-size: 0.9rem;
-    letter-spacing: 0.2rem;
-    line-height: 1.1;
-}
-
-.subtext {
-    margin: 0;
-    font-weight: 550;
-    font-size: 0.5rem;
-    color: #FFF;
-    letter-spacing: 0.42rem;
-    line-height: 1.1;
-}
-
-.services {
-    font-size: 0.5rem;
-    font-weight: 550;
-    color: #60a9ba;
-    letter-spacing: 0.109rem;
-    line-height: 1.2
-}
-
-.highlight {
-    color: #FFF;
-}
-
-.dark {
-    color: #60a9ba;
-}
-
-
-@media (min-width: 957px) {
-    #menuIcon {
-        display: none;
+    /* remove extra margin on the very last one */
+    &:last-child {
+        margin-right: 0;
     }
+  
+    /* sliding underline */
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: #cfd721;       /* logo/footer yellow */
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+  
+    /* recolor your inline PNG/SVG icon to match text */
+    .custom-icon img {
+      transition: filter 0.3s ease;
+      filter: brightness(0) saturate(100%) invert(36%) sepia(58%) saturate(314%) hue-rotate(73deg) brightness(92%) contrast(87%);
+    }
+  
+    /* hover & active */
+    &:hover,
+    &.active-link {
+      background-color: #cfd721;        /* swap to yellow */
+      color: #ffffff;
+  
+      &::after {
+        width: 100%;
+        left: 0;
+      }
+  
+      .custom-icon img {
+        /* make icon white on hover */
+        filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(189deg) brightness(103%) contrast(103%);
+      }
+    }
+  }
 
+@media (min-width: 1133px) {
     .mat-sidenav {
         display: none;
     }
@@ -150,19 +139,8 @@ p {
     }
 }
 
-@media (max-width: 957px) {
+@media (max-width: 1133px) {
     .top-menu-item {
         display: none;
     }
-}
-
-.logo-image {
-    height: 100%;
-    /* Ensures the image height matches the toolbar's height */
-    max-height: 172px;
-    /* Optional: Set a max height to avoid the image becoming too large */
-    object-fit: contain;
-    /* Maintains the aspect ratio of the image */
-    margin-right: 16px;
-    /* Adds some space between the logo and the next element */
 }

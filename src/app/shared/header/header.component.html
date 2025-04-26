@@ -6,23 +6,29 @@
 
     <span class="example-spacer"></span>
 
-    <a mat-button class="top-menu-item lato-black" routerLink="/stillbegleitung" routerLinkActive="active-link">
-        <mat-icon class="custom-icon"><img src="../../../assets/breastfeeding.png" alt="Breastfeeding Icon"></mat-icon>
-        STILLBEGLEITUNG
-    </a>
-    <a mat-button class="top-menu-item lato-black" routerLink="/beikost" routerLinkActive="active-link">
-        <mat-icon class="custom-icon"><img src="../../../assets/feeding.png" alt="Breastfeeding Icon"></mat-icon>
-        BABYGELEITETE BEIKOST
-    </a>
-    <a mat-button class="top-menu-item lato-black" routerLink="/trageberatung" routerLinkActive="active-link">
-        <mat-icon class="custom-icon"><img src="../../../assets/baby-carrier.png" alt="Breastfeeding Icon"></mat-icon>
-        TRAGEBERATUNG
-    </a>
+    <ng-container *ngIf="linksVisible">
+        <a mat-button class="top-menu-item lato-black" routerLink="/stillbegleitung" routerLinkActive="active-link">
+            <mat-icon class="custom-icon">
+                <img src="../../../assets/breastfeeding.png" alt="Breastfeeding Icon">
+            </mat-icon>
+            STILLBEGLEITUNG
+        </a>
+        <a mat-button class="top-menu-item lato-black" routerLink="/beikost" routerLinkActive="active-link">
+            <mat-icon class="custom-icon">
+                <img src="../../../assets/feeding.png" alt="Feeding Icon">
+            </mat-icon>
+            BABYGELEITETE BEIKOST
+        </a>
+        <a mat-button class="top-menu-item lato-black" routerLink="/trageberatung" routerLinkActive="active-link">
+            <mat-icon class="custom-icon">
+                <img src="../../../assets/baby-carrier.png" alt="Carrier Icon">
+            </mat-icon>
+            TRAGEBERATUNG
+        </a>
+    </ng-container>
 
-    <button mat-icon-button (click)="menuToggle.emit()" id="menuIcon" aria-label="Toggle sidenav">
+    <button mat-icon-button (click)="toggleMenu()" id="menuIcon" aria-label="Toggle sidenav">
         <mat-icon>menu</mat-icon>
     </button>
 
 </mat-toolbar>
-
-
