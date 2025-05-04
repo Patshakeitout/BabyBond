@@ -21,7 +21,12 @@ const routes: Routes = [
       }
     }
   },
-  { path: 'stillbegleitung', component: StillbegleitungComponent, data: { breadcrumb: 'Stillbegleitung' } },
+  {
+    path: 'stillbegleitung',
+    loadChildren: () =>
+      import('./stillbegleitung/stillbegleitung.module')
+        .then(m => m.StillbegleitungModule)
+  },
   { path: 'stillbegleitung/stillwissen', component: BreastfeedingKnowledgeComponent, data: { breadcrumb: 'Stillwissen' } },
   { path: 'beikost', component: BeikostComponent, data: { breadcrumb: 'Beikost' } },
   { path: 'trageberatung', component: TrageberatungComponent, data: { breadcrumb: 'Trageberatung' } },

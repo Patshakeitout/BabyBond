@@ -8,9 +8,9 @@
 
     <ng-container *ngIf="linksVisible">
         <!-- STILLBEGLEITUNG menu trigger -->
-        <button mat-button class="top-menu-item lato-black" [matMenuTriggerFor]="stillMenu"
-            [routerLink]="'/stillbegleitung'" routerLinkActive="active-link" aria-haspopup="true"
-            aria-label="Stillbegleitung menu">
+        <button mat-button class="top-menu-item lato-black" [routerLink]="['/stillbegleitung']"
+            routerLinkActive="active-link" aria-haspopup="true" aria-label="Stillbegleitung menu"
+            [matMenuTriggerFor]="stillMenu" #menuTrigger="matMenuTrigger" (mouseenter)="menuTrigger.openMenu()">
             <mat-icon class="custom-icon">
                 <img src="../../../assets/breastfeeding.png" alt="Breastfeeding Icon">
             </mat-icon>
@@ -18,12 +18,12 @@
         </button>
 
         <!-- Sub‐menu -->
-        <mat-menu #stillMenu="matMenu">
-            <button mat-menu-item [routerLink]="'/stillbegleitung/stillwissen'" routerLinkActive="active-link">
+        <mat-menu #stillMenu="matMenu" (mouseleave)="menuTrigger.closeMenu()">
+            <button mat-menu-item routerLink="/stillbegleitung/stillwissen" routerLinkActive="active-link">
                 <mat-icon>school</mat-icon>
                 <span class="lato-black">Stillwissen</span>
             </button>
-            <!-- add more submenu items here -->
+            <!-- other submenu items... -->
         </mat-menu>
 
         <a mat-button class="top-menu-item lato-black" routerLink="/beikost" routerLinkActive="active-link">
