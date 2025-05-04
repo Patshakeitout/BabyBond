@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
+import { Component }     from '@angular/core';
 
 @Component({
   selector: 'app-stillbegleitung',
   templateUrl: './stillbegleitung.component.html',
-  styleUrl: './stillbegleitung.component.scss'
+  styleUrls: ['./stillbegleitung.component.scss']
 })
-export class StillbegleitungComponent {
+export class StillbegleitungComponent { }
 
-}

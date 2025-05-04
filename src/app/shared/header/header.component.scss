@@ -132,10 +132,11 @@ mat-button {
     }
 }
 
-.app-breadcrumb {
+/* e.g. in styles.scss or a global file loaded last */
+xng-breadcrumb {
     display: flex;
+    justify-content: center;
 }
-
 
 
 @media (min-width: 1133px) {
