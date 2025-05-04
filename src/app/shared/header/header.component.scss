@@ -83,7 +83,8 @@ mat-button {
     font-size: 1.2rem;
     padding: 0.75rem 0.75rem;
     margin-right: 1rem;
-    color: #367714;                    /* default text */
+    color: #367714;
+    /* default text */
     text-transform: uppercase;
     font-weight: 700;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -92,42 +93,50 @@ mat-button {
     &:last-child {
         margin-right: 0;
     }
-  
+
     /* sliding underline */
     &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background-color: #cfd721;       /* logo/footer yellow */
-      transition: width 0.3s ease, left 0.3s ease;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: #cfd721;
+        /* logo/footer yellow */
+        transition: width 0.3s ease, left 0.3s ease;
     }
-  
+
     /* recolor your inline PNG/SVG icon to match text */
     .custom-icon img {
-      transition: filter 0.3s ease;
-      filter: brightness(0) saturate(100%) invert(36%) sepia(58%) saturate(314%) hue-rotate(73deg) brightness(92%) contrast(87%);
+        transition: filter 0.3s ease;
+        filter: brightness(0) saturate(100%) invert(36%) sepia(58%) saturate(314%) hue-rotate(73deg) brightness(92%) contrast(87%);
     }
-  
+
     /* hover & active */
     &:hover,
     &.active-link {
-      background-color: #cfd721;        /* swap to yellow */
-      color: #ffffff;
-  
-      &::after {
-        width: 100%;
-        left: 0;
-      }
-  
-      .custom-icon img {
-        /* make icon white on hover */
-        filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(189deg) brightness(103%) contrast(103%);
-      }
+        background-color: #cfd721;
+        /* swap to yellow */
+        color: #ffffff;
+
+        &::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .custom-icon img {
+            /* make icon white on hover */
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(189deg) brightness(103%) contrast(103%);
+        }
     }
-  }
+}
+
+.app-breadcrumb {
+    display: flex;
+}
+
+
 
 @media (min-width: 1133px) {
     .mat-sidenav {

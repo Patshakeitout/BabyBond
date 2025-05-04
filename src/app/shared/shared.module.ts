@@ -9,9 +9,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
+// PrimeNG
+import { BreadcrumbModule } from 'primeng/breadcrumb';
+
 // Header components
 import { HeaderComponent } from './header/header.component';
 import { HeaderLogoComponent } from './header-logo/header-logo.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 // Footer components 
 import { FooterComponent } from './footer/footer.component';
@@ -19,11 +23,11 @@ import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 import { DataPrivacyPolicyComponent } from './data-privacy-policy/data-privacy-policy.component';
 import { GtcComponent } from './gtc/gtc.component';
 
-
 @NgModule({
   declarations: [
     HeaderComponent,
     HeaderLogoComponent,
+    BreadcrumbComponent,
 
     FooterComponent,
     DisclaimerComponent,
@@ -39,7 +43,10 @@ import { GtcComponent } from './gtc/gtc.component';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+
+    // PrimeNG
+    BreadcrumbModule
   ],
   exports: [
     // Export all Material modules that other modules might use
@@ -52,6 +59,7 @@ import { GtcComponent } from './gtc/gtc.component';
     // Export shared components
     HeaderComponent,
     HeaderLogoComponent,
+    BreadcrumbComponent,
     FooterComponent,
     DisclaimerComponent,
     DataPrivacyPolicyComponent,

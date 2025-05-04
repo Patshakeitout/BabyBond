@@ -9,13 +9,13 @@ import { DataPrivacyPolicyComponent } from './shared/data-privacy-policy/data-pr
 import { GtcComponent } from './shared/gtc/gtc.component';
 
 const routes: Routes = [
-  {path: '', component: LandingComponent },
-  {path: 'stillbegleitung', component: StillbegleitungComponent },
-  {path: 'beikost', component: BeikostComponent },
-  {path: 'trageberatung', component: TrageberatungComponent },
-  {path: 'disclaimer', component: DisclaimerComponent },
-  {path: 'data-privacy-policy', component: DataPrivacyPolicyComponent },
-  {path: 'gtc', component: GtcComponent}
+  { path: '', component: LandingComponent },
+  { path: 'stillbegleitung', component: StillbegleitungComponent },
+  { path: 'beikost', component: BeikostComponent },
+  { path: 'trageberatung', component: TrageberatungComponent },
+  { path: 'disclaimer', component: DisclaimerComponent },
+  { path: 'data-privacy-policy', component: DataPrivacyPolicyComponent },
+  { path: 'gtc', component: GtcComponent }
 ];
 
 @NgModule({
