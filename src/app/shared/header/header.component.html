@@ -7,12 +7,25 @@
     <span class="example-spacer"></span>
 
     <ng-container *ngIf="linksVisible">
-        <a mat-button class="top-menu-item lato-black" routerLink="/stillbegleitung" routerLinkActive="active-link">
+        <!-- STILLBEGLEITUNG menu trigger -->
+        <button mat-button class="top-menu-item lato-black" [matMenuTriggerFor]="stillMenu"
+            [routerLink]="'/stillbegleitung'" routerLinkActive="active-link" aria-haspopup="true"
+            aria-label="Stillbegleitung menu">
             <mat-icon class="custom-icon">
                 <img src="../../../assets/breastfeeding.png" alt="Breastfeeding Icon">
             </mat-icon>
             STILLBEGLEITUNG
-        </a>
+        </button>
+
+        <!-- Sub‐menu -->
+        <mat-menu #stillMenu="matMenu">
+            <button mat-menu-item [routerLink]="'/stillbegleitung/stillwissen'" routerLinkActive="active-link">
+                <mat-icon>school</mat-icon>
+                <span class="lato-black">Stillwissen</span>
+            </button>
+            <!-- add more submenu items here -->
+        </mat-menu>
+
         <a mat-button class="top-menu-item lato-black" routerLink="/beikost" routerLinkActive="active-link">
             <mat-icon class="custom-icon">
                 <img src="../../../assets/feeding.png" alt="Feeding Icon">
@@ -33,6 +46,11 @@
 
 </mat-toolbar>
 
-<app-breadcrumb></app-breadcrumb>
+<xng-breadcrumb>
+    <ng-container *xngBreadcrumbItem="let breadcrumb; let info = info; let first = first">
+        <mat-icon *ngIf="info">{{ info }}</mat-icon>
+        <ng-container *ngIf="!first">{{ breadcrumb }}</ng-container>
+    </ng-container>
+</xng-breadcrumb>
 
 <router-outlet></router-outlet>

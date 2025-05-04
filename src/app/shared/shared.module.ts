@@ -8,14 +8,17 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatMenuModule } from '@angular/material/menu';
 
-// PrimeNG
-import { BreadcrumbModule } from 'primeng/breadcrumb';
+// xng-breadcrumb
+import {
+  BreadcrumbComponent,
+  BreadcrumbItemDirective
+} from 'xng-breadcrumb';
 
 // Header components
 import { HeaderComponent } from './header/header.component';
 import { HeaderLogoComponent } from './header-logo/header-logo.component';
-import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 // Footer components 
 import { FooterComponent } from './footer/footer.component';
@@ -27,8 +30,6 @@ import { GtcComponent } from './gtc/gtc.component';
   declarations: [
     HeaderComponent,
     HeaderLogoComponent,
-    BreadcrumbComponent,
-
     FooterComponent,
     DisclaimerComponent,
     DataPrivacyPolicyComponent,
@@ -44,9 +45,10 @@ import { GtcComponent } from './gtc/gtc.component';
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
+    MatMenuModule,
 
-    // PrimeNG
-    BreadcrumbModule
+    BreadcrumbComponent,
+    BreadcrumbItemDirective
   ],
   exports: [
     // Export all Material modules that other modules might use
@@ -55,15 +57,18 @@ import { GtcComponent } from './gtc/gtc.component';
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
+    MatMenuModule,
 
     // Export shared components
     HeaderComponent,
     HeaderLogoComponent,
     BreadcrumbComponent,
+    BreadcrumbItemDirective,
+
     FooterComponent,
     DisclaimerComponent,
     DataPrivacyPolicyComponent,
     GtcComponent
   ]
 })
-export class SharedModule {}
+export class SharedModule { }

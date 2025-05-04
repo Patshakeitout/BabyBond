@@ -7,12 +7,24 @@ import { TrageberatungComponent } from './trageberatung/trageberatung/trageberat
 import { DisclaimerComponent } from './shared/disclaimer/disclaimer.component';
 import { DataPrivacyPolicyComponent } from './shared/data-privacy-policy/data-privacy-policy.component';
 import { GtcComponent } from './shared/gtc/gtc.component';
+import { BreastfeedingKnowledgeComponent } from './stillbegleitung/breastfeeding-knowledge/breastfeeding-knowledge.component';
 
 const routes: Routes = [
-  { path: '', component: LandingComponent },
-  { path: 'stillbegleitung', component: StillbegleitungComponent },
-  { path: 'beikost', component: BeikostComponent },
-  { path: 'trageberatung', component: TrageberatungComponent },
+  {
+    path: '',
+    pathMatch: 'full',
+    component: LandingComponent,
+    data: {
+      breadcrumb: {
+        label: 'app home',
+        info: 'home'
+      }
+    }
+  },
+  { path: 'stillbegleitung', component: StillbegleitungComponent, data: { breadcrumb: 'Stillbegleitung' } },
+  { path: 'stillbegleitung/stillwissen', component: BreastfeedingKnowledgeComponent, data: { breadcrumb: 'Stillwissen' } },
+  { path: 'beikost', component: BeikostComponent, data: { breadcrumb: 'Beikost' } },
+  { path: 'trageberatung', component: TrageberatungComponent, data: { breadcrumb: 'Trageberatung' } },
   { path: 'disclaimer', component: DisclaimerComponent },
   { path: 'data-privacy-policy', component: DataPrivacyPolicyComponent },
   { path: 'gtc', component: GtcComponent }
