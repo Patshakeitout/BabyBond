@@ -7,36 +7,56 @@
     <span class="example-spacer"></span>
 
     <ng-container *ngIf="linksVisible">
-        <!-- STILLBEGLEITUNG menu trigger -->
-        <button mat-button class="top-menu-item lato-black" [routerLink]="['/stillbegleitung']"
-            routerLinkActive="active-link" aria-haspopup="true" aria-label="Stillbegleitung menu"
-            [matMenuTriggerFor]="stillMenu" #menuTrigger="matMenuTrigger" (mouseenter)="menuTrigger.openMenu()">
-            <mat-icon class="custom-icon">
-                <img src="../../../assets/breastfeeding.png" alt="Breastfeeding Icon">
-            </mat-icon>
-            STILLBEGLEITUNG
+
+        <!-- BERATUNG menu trigger -->
+        <button mat-button class="top-menu-item lato-black" aria-haspopup="true" aria-label="service menu"
+            #serviceTrigger="matMenuTrigger" [matMenuTriggerFor]="serviceMenu" (mouseenter)="serviceTrigger.openMenu()">
+            WAS ICH ANBIETE
         </button>
 
         <!-- Sub‐menu -->
-        <mat-menu #stillMenu="matMenu" (mouseleave)="menuTrigger.closeMenu()">
-            <button mat-menu-item routerLink="/stillbegleitung/stillwissen" routerLinkActive="active-link">
-                <mat-icon>school</mat-icon>
-                <span class="lato-black">Stillwissen</span>
+        <mat-menu #serviceMenu="matMenu" (mouseleave)="serviceTrigger.closeMenu()">
+            <button mat-menu-item routerLink="/beratung/stillbegleitung" routerLinkActive="active-link">
+                <span class="lato-black">Stillberatung / Stillbegleitung</span>
             </button>
-            <!-- other submenu items... -->
+            <button mat-menu-item routerLink="/beratung/formularberatung" routerLinkActive="active-link">
+                <span class="lato-black">Formularberatung / Beratung zu Flaschenernährung </span>
+            </button>
+            <button mat-menu-item routerLink="/beratung/beikostberatung" routerLinkActive="active-link">
+                <span class="lato-black">Beikostberatung</span>
+            </button>
+            <button mat-menu-item routerLink="/beratung/picky-eaters" routerLinkActive="active-link">
+                <span class="lato-black">Picky Eaters</span>
+            </button>
+            <button mat-menu-item routerLink="/beratung/vegan" routerLinkActive="active-link">
+                <span class="lato-black">vegane Säuglingsernährung</span>
+            </button>
+            <button mat-menu-item routerLink="/beratung/trageberatung" routerLinkActive="active-link">
+                <span class="lato-black">Trageberatung</span>
+            </button>
         </mat-menu>
 
-        <a mat-button class="top-menu-item lato-black" routerLink="/beikost" routerLinkActive="active-link">
-            <mat-icon class="custom-icon">
-                <img src="../../../assets/feeding.png" alt="Feeding Icon">
-            </mat-icon>
-            BABYGELEITETE BEIKOST
-        </a>
+        <!-- About menu trigger -->
+        <button mat-button class="top-menu-item lato-black" aria-haspopup="true" aria-label="About me menu"
+            #aboutTrigger="matMenuTrigger" [matMenuTriggerFor]="aboutMeMenu" (mouseenter)="aboutTrigger.openMenu()">
+            WER ICH BIN
+        </button>
+
+        <!-- Sub‐menu -->
+        <mat-menu #aboutMeMenu="matMenu" (mouseleave)="aboutTrigger.closeMenu()">
+            <button mat-menu-item routerLink="/wer-ich-bin/ueber-mich/" routerLinkActive="active-link">
+                <span class="lato-black">Über mich</span>
+            </button>
+            <button mat-menu-item routerLink="/wer-ich-bin/preise" routerLinkActive="active-link">
+                <span class="lato-black">Preise</span>
+            </button>
+            <button mat-menu-item routerLink="/wer-ich-bin/netzwerk" routerLinkActive="active-link">
+                <span class="lato-black">Netzwerk</span>
+            </button>
+        </mat-menu>
+
         <a mat-button class="top-menu-item lato-black" routerLink="/trageberatung" routerLinkActive="active-link">
-            <mat-icon class="custom-icon">
-                <img src="../../../assets/baby-carrier.png" alt="Carrier Icon">
-            </mat-icon>
-            TRAGEBERATUNG
+            KONTAKT
         </a>
     </ng-container>
 

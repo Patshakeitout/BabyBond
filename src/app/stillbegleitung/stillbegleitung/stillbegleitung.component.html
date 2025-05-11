@@ -1,8 +1,0 @@
-<!-- ONLY show this when there is NO active child route -->
-<ng-container *ngIf="!childOutlet.isActivated">
-    <h1>Stillbegleitung</h1>
-    <p><img src="../../../assets/Fotolia_212946876_XXL.jpg" alt=""></p>
-</ng-container>
-
-<!-- Child route (Stillwissen) renders here -->
-<router-outlet #childOutlet="outlet"></router-outlet>

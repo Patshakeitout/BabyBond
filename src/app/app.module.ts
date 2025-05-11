@@ -8,7 +8,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 
 import { SharedModule } from './shared/shared.module';
 import { LandingModule } from './landing/landing.module';
-import { StillbegleitungModule } from './stillbegleitung/stillbegleitung.module';
+import { WhatIDoModule } from './what-i-do/what-i-do.module';
 import { BeikostModule } from './beikost/beikost.module';
 import { TrageberatungModule } from './trageberatung/trageberatung.module';
 
@@ -22,7 +22,7 @@ import { TrageberatungModule } from './trageberatung/trageberatung.module';
     AppRoutingModule,
     SharedModule,
     LandingModule,
-    StillbegleitungModule,
+    WhatIDoModule,
     BeikostModule,
     TrageberatungModule
   ],

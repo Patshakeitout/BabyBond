@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
-import { StillbegleitungComponent } from './stillbegleitung/stillbegleitung/stillbegleitung.component';
+import { Service1Component } from './what-i-do/service1/service1.component';
 import { BeikostComponent } from './beikost/beikost/beikost.component';
 import { TrageberatungComponent } from './trageberatung/trageberatung/trageberatung.component';
 import { DisclaimerComponent } from './shared/disclaimer/disclaimer.component';
 import { DataPrivacyPolicyComponent } from './shared/data-privacy-policy/data-privacy-policy.component';
 import { GtcComponent } from './shared/gtc/gtc.component';
-import { BreastfeedingKnowledgeComponent } from './stillbegleitung/breastfeeding-knowledge/breastfeeding-knowledge.component';
 
 const routes: Routes = [
   {
@@ -16,20 +15,22 @@ const routes: Routes = [
     component: LandingComponent,
     data: {
       breadcrumb: {
-        label: 'app home',
         info: 'home'
       }
     }
   },
   {
-    path: 'stillbegleitung',
+    path: 'beratung',
     loadChildren: () =>
-      import('./stillbegleitung/stillbegleitung.module')
-        .then(m => m.StillbegleitungModule)
+      import('./what-i-do/what-i-do.module')
+        .then(m => m.WhatIDoModule)
   },
-  { path: 'stillbegleitung/stillwissen', component: BreastfeedingKnowledgeComponent, data: { breadcrumb: 'Stillwissen' } },
-  { path: 'beikost', component: BeikostComponent, data: { breadcrumb: 'Beikost' } },
-  { path: 'trageberatung', component: TrageberatungComponent, data: { breadcrumb: 'Trageberatung' } },
+  {
+    path: 'wer-ich-bin',
+    loadChildren: () =>
+      import('./who-i-am/who-i-am.module')
+        .then(m => m.WhoIAmModule)
+  },
   { path: 'disclaimer', component: DisclaimerComponent },
   { path: 'data-privacy-policy', component: DataPrivacyPolicyComponent },
   { path: 'gtc', component: GtcComponent }

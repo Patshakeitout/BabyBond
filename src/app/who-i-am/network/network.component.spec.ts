@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StillbegleitungComponent } from './stillbegleitung.component';
+import { NetworkComponent } from './network.component';
 
-describe('StillbegleitungComponent', () => {
-  let component: StillbegleitungComponent;
-  let fixture: ComponentFixture<StillbegleitungComponent>;
+describe('NetworkComponent', () => {
+  let component: NetworkComponent;
+  let fixture: ComponentFixture<NetworkComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [StillbegleitungComponent]
+      declarations: [NetworkComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(StillbegleitungComponent);
+    fixture = TestBed.createComponent(NetworkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
