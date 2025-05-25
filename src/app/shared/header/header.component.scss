@@ -124,18 +124,29 @@ mat-button {
             width: 100%;
             left: 0;
         }
-
-        .custom-icon img {
-            /* make icon white on hover */
-            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(189deg) brightness(103%) contrast(103%);
-        }
     }
+}
+
+/* Sub menu */
+::ng-deep .mat-mdc-menu-content {
+    background-color: #b9dca4; // light green background
+    color:#367714
+}
+
+::ng-deep .mat-menu-item {
+    color:#367714
 }
 
 /* e.g. in styles.scss or a global file loaded last */
 xng-breadcrumb {
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    padding-top: 0.1rem;
+    padding-left: 5.5rem;
+}
+
+:host ::ng-deep.xng-breadcrumb-separator:first-of-type {
+  display: none;
 }
 
 

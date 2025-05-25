@@ -9,8 +9,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { SharedModule } from './shared/shared.module';
 import { LandingModule } from './landing/landing.module';
 import { WhatIDoModule } from './what-i-do/what-i-do.module';
-import { BeikostModule } from './beikost/beikost.module';
-import { TrageberatungModule } from './trageberatung/trageberatung.module';
+import { WhoIAmModule } from './who-i-am/who-i-am.module';
+import { ContactModule } from './contact/contact.module';
 
 
 @NgModule({
@@ -23,8 +23,8 @@ import { TrageberatungModule } from './trageberatung/trageberatung.module';
     SharedModule,
     LandingModule,
     WhatIDoModule,
-    BeikostModule,
-    TrageberatungModule
+    WhoIAmModule,
+    ContactModule
   ],
   providers: [
     provideHttpClient(

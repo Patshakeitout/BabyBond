@@ -10,7 +10,12 @@
 - Home: Herzl. Wilkommen (s. alte Seite)
 - Kontakt-Seite mit AGB Button (neue Komponente/Seite)
 
-11.05.25:
+25.05.25:
+- padding content -> done
+- 
+- Nav mobile toggle
+
+
 
 
 

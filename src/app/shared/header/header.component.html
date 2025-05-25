@@ -7,42 +7,45 @@
     <span class="example-spacer"></span>
 
     <ng-container *ngIf="linksVisible">
-
-        <!-- BERATUNG menu trigger -->
-        <button mat-button class="top-menu-item lato-black" aria-haspopup="true" aria-label="service menu"
-            #serviceTrigger="matMenuTrigger" [matMenuTriggerFor]="serviceMenu" (mouseenter)="serviceTrigger.openMenu()">
+        <!-- Main nav WAS ICH ANBIETE -->
+        <button 
+            mat-button class="top-menu-item lato-black" 
+            aria-haspopup="true" aria-label="service menu"
+            #serviceTrigger="matMenuTrigger" [matMenuTriggerFor]="serviceMenu"
+        >
             WAS ICH ANBIETE
         </button>
-
-        <!-- Sub‐menu -->
+        <!-- Sub nav WAS ICH ANBIETE -->
         <mat-menu #serviceMenu="matMenu" (mouseleave)="serviceTrigger.closeMenu()">
             <button mat-menu-item routerLink="/beratung/stillbegleitung" routerLinkActive="active-link">
-                <span class="lato-black">Stillberatung / Stillbegleitung</span>
+                <span class="lato-menu-text">Stillberatung / Stillbegleitung</span>
             </button>
             <button mat-menu-item routerLink="/beratung/formularberatung" routerLinkActive="active-link">
-                <span class="lato-black">Formularberatung / Beratung zu Flaschenernährung </span>
+                <span class="lato-menu-text">Formularberatung / Beratung zu Flaschenernährung </span>
             </button>
             <button mat-menu-item routerLink="/beratung/beikostberatung" routerLinkActive="active-link">
-                <span class="lato-black">Beikostberatung</span>
+                <span class="lato-menu-text">Beikostberatung</span>
             </button>
             <button mat-menu-item routerLink="/beratung/picky-eaters" routerLinkActive="active-link">
-                <span class="lato-black">Picky Eaters</span>
+                <span class="lato-menu-text">Picky Eaters</span>
             </button>
             <button mat-menu-item routerLink="/beratung/vegan" routerLinkActive="active-link">
-                <span class="lato-black">vegane Säuglingsernährung</span>
+                <span class="lato-menu-text">vegane Säuglingsernährung</span>
             </button>
             <button mat-menu-item routerLink="/beratung/trageberatung" routerLinkActive="active-link">
-                <span class="lato-black">Trageberatung</span>
+                <span class="lato-menu-text">Trageberatung</span>
             </button>
         </mat-menu>
 
-        <!-- About menu trigger -->
-        <button mat-button class="top-menu-item lato-black" aria-haspopup="true" aria-label="About me menu"
-            #aboutTrigger="matMenuTrigger" [matMenuTriggerFor]="aboutMeMenu" (mouseenter)="aboutTrigger.openMenu()">
+        <!-- Main nav WER ICH BIN -->
+        <button 
+            mat-button class="top-menu-item lato-black" 
+            aria-haspopup="true" aria-label="About me menu"
+            #aboutTrigger="matMenuTrigger" [matMenuTriggerFor]="aboutMeMenu"
+        >
             WER ICH BIN
         </button>
-
-        <!-- Sub‐menu -->
+        <!-- Sub nav WER ICH BIN -->
         <mat-menu #aboutMeMenu="matMenu" (mouseleave)="aboutTrigger.closeMenu()">
             <button mat-menu-item routerLink="/wer-ich-bin/ueber-mich/" routerLinkActive="active-link">
                 <span class="lato-black">Über mich</span>
@@ -55,7 +58,7 @@
             </button>
         </mat-menu>
 
-        <a mat-button class="top-menu-item lato-black" routerLink="/trageberatung" routerLinkActive="active-link">
+        <a mat-button class="top-menu-item lato-black" routerLink="/kontakt" routerLinkActive="active-link">
             KONTAKT
         </a>
     </ng-container>
@@ -66,11 +69,13 @@
 
 </mat-toolbar>
 
-<xng-breadcrumb>
+<ng-template #iconTemplate let-first="first">
+    <mat-icon *ngIf="!first">arrow_right</mat-icon>
+</ng-template>
+
+<xng-breadcrumb [separator]="iconTemplate">
     <ng-container *xngBreadcrumbItem="let breadcrumb; let info = info; let first = first">
         <mat-icon *ngIf="info">{{ info }}</mat-icon>
-        <ng-container *ngIf="!first">{{ breadcrumb }}</ng-container>
+        <ng-container *ngIf="!info">{{ breadcrumb }}</ng-container>
     </ng-container>
 </xng-breadcrumb>
-
-<router-outlet></router-outlet>

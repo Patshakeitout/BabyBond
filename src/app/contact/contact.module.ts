@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TrageberatungComponent } from './trageberatung/trageberatung.component';
 
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
   declarations: [
-    TrageberatungComponent
+    ContactComponent
   ],
   imports: [
     CommonModule
   ]
 })
-export class TrageberatungModule { }
+export class ContactModule { }

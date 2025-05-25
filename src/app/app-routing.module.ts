@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
-import { Service1Component } from './what-i-do/service1/service1.component';
-import { BeikostComponent } from './beikost/beikost/beikost.component';
-import { TrageberatungComponent } from './trageberatung/trageberatung/trageberatung.component';
 import { DisclaimerComponent } from './shared/disclaimer/disclaimer.component';
 import { DataPrivacyPolicyComponent } from './shared/data-privacy-policy/data-privacy-policy.component';
 import { GtcComponent } from './shared/gtc/gtc.component';
+import { ContactComponent } from './contact/contact/contact.component';
 
 const routes: Routes = [
   {
@@ -31,6 +29,7 @@ const routes: Routes = [
       import('./who-i-am/who-i-am.module')
         .then(m => m.WhoIAmModule)
   },
+  { path: 'contact', component: ContactComponent },
   { path: 'disclaimer', component: DisclaimerComponent },
   { path: 'data-privacy-policy', component: DataPrivacyPolicyComponent },
   { path: 'gtc', component: GtcComponent }
