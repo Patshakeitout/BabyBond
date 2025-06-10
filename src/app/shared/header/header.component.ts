@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-
+import { NAV_LINKS } from '../nav-links';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +7,26 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  /** Navigation elements */
+  navLinks = NAV_LINKS;
+
+  get whatIDoChildren() {
+    const subNavs = this.navLinks.find(
+      link => link.title === 'Was ich mache'
+    )?.children || [];
+
+    return subNavs;
+  }
+
+  get whatIAmChildren() {
+    const subNavs = this.navLinks.find(
+      link => link.title === 'Wer ich bin'
+    )?.children || [];
+
+    return subNavs;
+  }
+
+
   /** Fires when the user clicks the menu icon */
   @Output() menuToggle = new EventEmitter<void>();
 

@@ -12,9 +12,19 @@
 
 25.05.25:
 - padding content -> done
-- 
-- Nav mobile toggle
 
+31.05.25:
+- Breadcrumb Mitte kein Link
+- Wer ich bin
+- Abstand logo
+- Kontaktseite
+- hover menu -> done
+
+09.06.25
+- sidenav: header-items accordion little larger
+- padding left sub Nav
+- Kontakt mat panel
+- Link logo to home
 
 
 

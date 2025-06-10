@@ -1,46 +1,48 @@
 <mat-sidenav-container>
 
-    <mat-sidenav #sidenav [fixedInViewport]="true" [fixedTopGap]="56" mode="side">
-        <h2>Menü</h2>
-        <nav class="side-nav">
-            <ul class="side-nav-items">
-                <li>
-                    <a mat-button (click)="sidenav.close()" class="side-menu-item lato-black" routerLink="/"
-                        routerLinkActive="active-link">
-                        HOME
-                    </a>
-                </li>
-                <li>
-                    <a mat-button (click)="sidenav.close()" class="side-menu-item lato-black"
-                        routerLink="/stillbegleitung" routerLinkActive="active-link">
-                        STILLBEGLEITUNG
-                    </a>
-                </li>
-                <li>
-                    <a mat-button (click)="sidenav.close()" class="side-menu-item lato-black" routerLink="/beikost"
-                        routerLinkActive="active-link">
-                        BABYGELEITETE BEIKOST
-                    </a>
-                </li>
-                <li>
-                    <a mat-button (click)="sidenav.close()" class="side-menu-item lato-black"
-                        routerLink="/trageberatung" routerLinkActive="active-link">
-                        TRAGEBERATUNG
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <mat-sidenav class="sidenav" #sidenav mode="over" [opened]="false" [fixedInViewport]="true" disableClose="false">
+        <header class="sidenav-header">
+            <div class="sidenav-header-row">
+                <img id="logo" src="favicon.gif" routerLink="/" routerLinkActive="active-link" alt="Logo">
+                <button mat-icon-button (click)="sidenav.close()" aria-label="Zurück zum Inhalt">
+                    <mat-icon class="btn-back">arrow_back</mat-icon>
+                </button>
+            </div>
+            <h1 class="side-title">Menü</h1>
+        </header>
+        <mat-accordion class="side-nav">
+            <!-- Wer ich bin -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>Wer ich bin</mat-panel-title>
+                </mat-expansion-panel-header>
+                <ng-container *ngFor="let sub of navLinks[0].children">
+                    <p mat-button (click)="sidenav.close(); router.navigate([sub.route])" class="lato-menu-text">
+                        {{ sub.title }}
+                    </p>
+                </ng-container>
+            </mat-expansion-panel>
 
+            <!-- Was ich mache -->
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>Was ich mache</mat-panel-title>
+                </mat-expansion-panel-header>
+                <ng-container *ngFor="let sub of navLinks[1].children">
+                    <p mat-button (click)="sidenav.close(); router.navigate([sub.route])" class="lato-menu-text">
+                        {{ sub.title }}
+                    </p>
+                </ng-container>
+            </mat-expansion-panel>
+        </mat-accordion>
     </mat-sidenav>
 
     <mat-sidenav-content>
         <app-header (menuToggle)="sidenav.toggle()"></app-header>
-    
         <main>
-          <router-outlet></router-outlet>
+            <router-outlet></router-outlet>
         </main>
-    
         <app-footer></app-footer>
     </mat-sidenav-content>
-    
+
 </mat-sidenav-container>

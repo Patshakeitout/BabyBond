@@ -5,6 +5,7 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatExpansionModule } from '@angular/material/expansion'
 
 import { SharedModule } from './shared/shared.module';
 import { LandingModule } from './landing/landing.module';
@@ -20,6 +21,8 @@ import { ContactModule } from './contact/contact.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatExpansionModule,
+
     SharedModule,
     LandingModule,
     WhatIDoModule,

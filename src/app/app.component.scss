@@ -1,3 +1,8 @@
+/* Variables */
+$textColor: #367714;
+$bg: #b9dca4;
+
+
 /* If you’re using ViewEncapsulation.Emulated (default), you can use ::ng-deep
    to pierce through to the Material component’s element: */
 :host ::ng-deep mat-sidenav-content {
@@ -21,36 +26,92 @@ app-footer {
   flex-shrink: 0;
 }
 
+/* Side Nav */
 .mat-sidenav {
-  background-color: #b9dca4;
-  width: 17.5%;  
+  background-color: $bg;
+  width: 100%;  
+  padding: 1.2rem 1.2rem 2rem 2rem;
 }
 
-.mat-sidenav h2 {
-  color: #367714;
-  padding-left: 1.2rem;
-  padding-top: 1.2rem;
+.sidenav-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* Sidenav lists */
-.side-nav {
-  padding-left: 1.2rem;
+#logo {
+  height: 48px;
+  width: auto;
+  flex-shrink: 0;
 }
 
-.side-nav-items {
-  list-style-type: disc;
-  padding-left: 20px; /* Adjusts indentation for the dots */
+.btn-back {
+  color: $textColor;
 }
 
-.side-nav-items li {
-  margin-bottom: 20px; /* Adds space between each menu item */
-  color:#367714;
+.sidenav-header-row button[mat-icon-button] {
+  margin-left: auto;
 }
 
-.side-menu-item {
-  text-decoration: none;
+.side-title {
+  margin: 1.4rem 1.2rem 1.4rem 0; // top margin to separate from row above
+  color: $textColor;
   font-family: 'Lato Black', sans-serif;
   font-weight: bold;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+
+.side-nav {
+  background-color: $bg;
+}
+
+mat-panel-title {
+  color: $textColor;
+}
+
+mat-expansion-panel {
+  background-color: #b9dca4;
+  color:#367714;
+  font-family: 'Lato Black', sans-serif;
+}
+
+mat-expansion-panel-header {
+  background-color: #b9dca4;
+  font-weight: bold;
+}
+
+/* Hover color */
+mat-expansion-panel-header:hover {
+  background-color: #a4c08b !important;
+}
+
+/* Mobile submenu underline effect (side-nav version) */
+::ng-deep .mat-expansion-panel-body li .lato-menu-text {
+  position: relative;
+  display: inline-block;
+}
+
+::ng-deep .mat-expansion-panel-body li .lato-menu-text::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.05em;
+    height: 2px;
+    background: darken(#367714, 4%);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.8s ease;
+    border-radius: 2px;
+    width: 100%;
+  }
+
+::ng-deep .mat-expansion-panel-body li:hover .lato-menu-text::after,
+::ng-deep .mat-expansion-panel-body li:focus-within .lato-menu-text::after {
+  transform: scaleX(1);
 }
 
 /* Default mat-button color */

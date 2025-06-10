@@ -7,57 +7,31 @@
     <span class="example-spacer"></span>
 
     <ng-container *ngIf="linksVisible">
-        <!-- Main nav WAS ICH ANBIETE -->
-        <button 
-            mat-button class="top-menu-item lato-black" 
-            aria-haspopup="true" aria-label="service menu"
-            #serviceTrigger="matMenuTrigger" [matMenuTriggerFor]="serviceMenu"
-        >
+        <!-- Nav: WAS ICH ANBIETE -->
+        <button mat-button class="top-menu-item lato-black" aria-haspopup="true" aria-label="service menu"
+            #serviceTrigger="matMenuTrigger" [matMenuTriggerFor]="serviceMenu">
             WAS ICH ANBIETE
         </button>
-        <!-- Sub nav WAS ICH ANBIETE -->
         <mat-menu #serviceMenu="matMenu" (mouseleave)="serviceTrigger.closeMenu()">
-            <button mat-menu-item routerLink="/beratung/stillbegleitung" routerLinkActive="active-link">
-                <span class="lato-menu-text">Stillberatung / Stillbegleitung</span>
-            </button>
-            <button mat-menu-item routerLink="/beratung/formularberatung" routerLinkActive="active-link">
-                <span class="lato-menu-text">Formularberatung / Beratung zu Flaschenernährung </span>
-            </button>
-            <button mat-menu-item routerLink="/beratung/beikostberatung" routerLinkActive="active-link">
-                <span class="lato-menu-text">Beikostberatung</span>
-            </button>
-            <button mat-menu-item routerLink="/beratung/picky-eaters" routerLinkActive="active-link">
-                <span class="lato-menu-text">Picky Eaters</span>
-            </button>
-            <button mat-menu-item routerLink="/beratung/vegan" routerLinkActive="active-link">
-                <span class="lato-menu-text">vegane Säuglingsernährung</span>
-            </button>
-            <button mat-menu-item routerLink="/beratung/trageberatung" routerLinkActive="active-link">
-                <span class="lato-menu-text">Trageberatung</span>
+            <button mat-menu-item *ngFor="let child of whatIDoChildren" [routerLink]="child.route"
+                routerLinkActive="active-link">
+                <span class="lato-menu-text">{{ child.title }}</span>
             </button>
         </mat-menu>
 
-        <!-- Main nav WER ICH BIN -->
-        <button 
-            mat-button class="top-menu-item lato-black" 
-            aria-haspopup="true" aria-label="About me menu"
-            #aboutTrigger="matMenuTrigger" [matMenuTriggerFor]="aboutMeMenu"
-        >
+        <!-- Nav WER ICH BIN -->
+        <button mat-button class="top-menu-item lato-black" aria-haspopup="true" aria-label="About me menu"
+            #aboutTrigger="matMenuTrigger" [matMenuTriggerFor]="aboutMeMenu">
             WER ICH BIN
         </button>
-        <!-- Sub nav WER ICH BIN -->
-        <mat-menu #aboutMeMenu="matMenu" (mouseleave)="aboutTrigger.closeMenu()">
-            <button mat-menu-item routerLink="/wer-ich-bin/ueber-mich/" routerLinkActive="active-link">
-                <span class="lato-black">Über mich</span>
-            </button>
-            <button mat-menu-item routerLink="/wer-ich-bin/preise" routerLinkActive="active-link">
-                <span class="lato-black">Preise</span>
-            </button>
-            <button mat-menu-item routerLink="/wer-ich-bin/netzwerk" routerLinkActive="active-link">
-                <span class="lato-black">Netzwerk</span>
+        <mat-menu #aboutMeMenu="matMenu" (mouseleave)="serviceTrigger.closeMenu()">
+            <button mat-menu-item *ngFor="let child of whatIAmChildren" [routerLink]="child.route"
+                routerLinkActive="active-link">
+                <span class="lato-menu-text">{{ child.title }}</span>
             </button>
         </mat-menu>
 
+        <!-- Nav Kontakt -->
         <a mat-button class="top-menu-item lato-black" routerLink="/kontakt" routerLinkActive="active-link">
             KONTAKT
         </a>

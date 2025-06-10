@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'
 
+import { NAV_LINKS } from './shared/nav-links';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +10,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'BabyBond';
+  navLinks = NAV_LINKS;
+
+  constructor(public router: Router) {}
+
 }

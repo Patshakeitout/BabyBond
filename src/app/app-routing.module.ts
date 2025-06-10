@@ -20,16 +20,17 @@ const routes: Routes = [
   {
     path: 'beratung',
     loadChildren: () =>
-      import('./what-i-do/what-i-do.module')
-        .then(m => m.WhatIDoModule)
+      import('./what-i-do/what-i-do.module').then(m => m.WhatIDoModule)
   },
   {
     path: 'wer-ich-bin',
     loadChildren: () =>
-      import('./who-i-am/who-i-am.module')
-        .then(m => m.WhoIAmModule)
+      import('./who-i-am/who-i-am.module').then(m => m.WhoIAmModule)
   },
-  { path: 'contact', component: ContactComponent },
+  {
+    path: 'kontakt',
+    loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
+  },
   { path: 'disclaimer', component: DisclaimerComponent },
   { path: 'data-privacy-policy', component: DataPrivacyPolicyComponent },
   { path: 'gtc', component: GtcComponent }

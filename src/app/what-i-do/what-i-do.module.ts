@@ -1,4 +1,4 @@
-// src/app/stillbegleitung/stillbegleitung.module.ts
+// src/app/what-i-do/what-i-do.module.ts
 import { NgModule }             from '@angular/core';
 import { CommonModule }         from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
