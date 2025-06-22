@@ -17,8 +17,8 @@
                     <mat-panel-title>Wer ich bin</mat-panel-title>
                 </mat-expansion-panel-header>
                 <ng-container *ngFor="let sub of navLinks[0].children">
-                    <p mat-button (click)="sidenav.close(); router.navigate([sub.route])" class="lato-menu-text">
-                        {{ sub.title }}
+                    <p mat-button (click)="sidenav.close(); router.navigate([sub.route])">
+                        <span class="lato-menu-text">{{ sub.title }}</span>
                     </p>
                 </ng-container>
             </mat-expansion-panel>
@@ -29,11 +29,23 @@
                     <mat-panel-title>Was ich mache</mat-panel-title>
                 </mat-expansion-panel-header>
                 <ng-container *ngFor="let sub of navLinks[1].children">
-                    <p mat-button (click)="sidenav.close(); router.navigate([sub.route])" class="lato-menu-text">
-                        {{ sub.title }}
+                    <p mat-button (click)="sidenav.close(); router.navigate([sub.route])">
+                        <span class="lato-menu-text">{{ sub.title }}</span>
                     </p>
                 </ng-container>
             </mat-expansion-panel>
+
+            <!-- Kontakt -->
+            <mat-expansion-panel expanded>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>Kontakt</mat-panel-title>
+                </mat-expansion-panel-header>
+                <p><strong>Stillbegleitung Susanne Schauer</strong></p>
+                <p>Elbeblick 5</p>
+                <p>25524 Itzehoe</p>
+                <p><a href="mailto:info&#64;susanneschauer.de">info&#64;susanneschauer.de</a></p>   
+            </mat-expansion-panel>
+
         </mat-accordion>
     </mat-sidenav>
 

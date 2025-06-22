@@ -4,27 +4,18 @@
 - Home Bild
 
 06.05.25:
-- Menu Kontext (3 Module)
-- Was ich anbiete -> kein Link!
-- Material breadcomb separator
-- Home: Herzl. Wilkommen (s. alte Seite)
+- Home: Herzl. Willkommen (s. alte Seite)
 - Kontakt-Seite mit AGB Button (neue Komponente/Seite)
-
-25.05.25:
-- padding content -> done
 
 31.05.25:
 - Breadcrumb Mitte kein Link
-- Wer ich bin
-- Abstand logo
 - Kontaktseite
-- hover menu -> done
 
-09.06.25
-- sidenav: header-items accordion little larger
-- padding left sub Nav
-- Kontakt mat panel
-- Link logo to home
+22.06.25
+- 
+- Bug mit close mobile menu
+- verlinken auf alte Seite
+
 
 
 

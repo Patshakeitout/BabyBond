@@ -1,12 +1,13 @@
 <mat-toolbar color="primary">
 
-    <img id="logo" src="../../../favicon.gif" routerLink="/" routerLinkActive="active-link">
+    <img id="logo" src="../../../favicon.gif" routerLink="/" routerLinkActive="active-link" />
 
     <app-header-logo></app-header-logo>
 
     <span class="example-spacer"></span>
 
-    <ng-container *ngIf="linksVisible">
+    <!-- Use a real element (div) here so *ngIf/[hidden] works -->
+    <div>
         <!-- Nav: WAS ICH ANBIETE -->
         <button mat-button class="top-menu-item lato-black" aria-haspopup="true" aria-label="service menu"
             #serviceTrigger="matMenuTrigger" [matMenuTriggerFor]="serviceMenu">
@@ -19,25 +20,25 @@
             </button>
         </mat-menu>
 
-        <!-- Nav WER ICH BIN -->
+        <!-- Nav: WER ICH BIN -->
         <button mat-button class="top-menu-item lato-black" aria-haspopup="true" aria-label="About me menu"
             #aboutTrigger="matMenuTrigger" [matMenuTriggerFor]="aboutMeMenu">
             WER ICH BIN
         </button>
-        <mat-menu #aboutMeMenu="matMenu" (mouseleave)="serviceTrigger.closeMenu()">
+        <mat-menu #aboutMeMenu="matMenu" (mouseleave)="aboutTrigger.closeMenu()">
             <button mat-menu-item *ngFor="let child of whatIAmChildren" [routerLink]="child.route"
                 routerLinkActive="active-link">
                 <span class="lato-menu-text">{{ child.title }}</span>
             </button>
         </mat-menu>
 
-        <!-- Nav Kontakt -->
+        <!-- Nav: KONTAKT -->
         <a mat-button class="top-menu-item lato-black" routerLink="/kontakt" routerLinkActive="active-link">
             KONTAKT
         </a>
-    </ng-container>
+    </div>
 
-    <button mat-icon-button (click)="toggleMenu()" id="menuIcon" aria-label="Toggle sidenav">
+    <button mat-icon-button (click)="toggleMenu()" id="menuIcon" aria-label="Toggle menu">
         <mat-icon>menu</mat-icon>
     </button>
 

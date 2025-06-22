@@ -30,10 +30,12 @@ app-footer {
 .mat-sidenav {
   background-color: $bg;
   width: 100%;  
-  padding: 1.2rem 1.2rem 2rem 2rem;
+  padding: 1.2rem 2rem 2rem 2rem;
 }
 
 .sidenav-header-row {
+  padding-left: 22px;
+  padding-right: 2px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -56,9 +58,11 @@ app-footer {
 .side-title {
   margin: 1.4rem 1.2rem 1.4rem 0; // top margin to separate from row above
   color: $textColor;
+  font-size: 36px;
   font-family: 'Lato Black', sans-serif;
   font-weight: bold;
   letter-spacing: 1px;
+  padding-left: 24px;
   text-align: left;
 }
 
@@ -79,6 +83,8 @@ mat-expansion-panel {
 
 mat-expansion-panel-header {
   background-color: #b9dca4;
+  font-family: 'Lato Black', sans-serif;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -88,30 +94,43 @@ mat-expansion-panel-header:hover {
 }
 
 /* Mobile submenu underline effect (side-nav version) */
-::ng-deep .mat-expansion-panel-body li .lato-menu-text {
+::ng-deep .mat-expansion-panel-body p[mat-button] {
+  display: block;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 0;
+  padding: 10px 0;
+  color: #367714;
+}
+
+::ng-deep .mat-expansion-panel-body p[mat-button] .lato-menu-text {
   position: relative;
   display: inline-block;
 }
 
-::ng-deep .mat-expansion-panel-body li .lato-menu-text::after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0.05em;
-    height: 2px;
-    background: darken(#367714, 4%);
-    transform-origin: left;
-    transform: scaleX(0);
-    transition: transform 0.8s ease;
-    border-radius: 2px;
-    width: 100%;
-  }
+::ng-deep .mat-expansion-panel-body p[mat-button] .lato-menu-text::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.15em;
+  height: 2px;
+  background: #305f12; // or your color
+  border-radius: 2px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.8s ease;
+  width: 100%;
+}
 
-::ng-deep .mat-expansion-panel-body li:hover .lato-menu-text::after,
-::ng-deep .mat-expansion-panel-body li:focus-within .lato-menu-text::after {
+::ng-deep .mat-expansion-panel-body p[mat-button]:hover .lato-menu-text::after,
+::ng-deep .mat-expansion-panel-body p[mat-button]:focus-visible .lato-menu-text::after {
   transform: scaleX(1);
+}
+
+.lato-menu-text {
+  font-size: 18px;
 }
 
 /* Default mat-button color */

@@ -6,15 +6,20 @@ $bg: #fdfdfd;
 
 mat-toolbar,
 mat-button {
-    height: 58px;
+    height: 67px;
+    padding: 25px;
 }
 
 /* Logo */
 #logo {
-    max-height: 73px;
-    margin-top: 20px;
-    margin-right: 7px;
+    max-height: 52px;
+    margin-top: 0px;
+    margin-right: 21px;
     cursor: pointer;
+}
+
+app-header-logo {
+    font-size: 64px;
 }
 
 .mat-mdc-button {
@@ -166,7 +171,7 @@ xng-breadcrumb {
     display: flex;
     justify-content: left;
     padding-top: 0.1rem;
-    padding-left: 5.5rem;
+    padding-left: 2.38rem;
 }
 
 :host ::ng-deep.xng-breadcrumb-separator:first-of-type {
@@ -174,7 +179,7 @@ xng-breadcrumb {
 }
 
 
-@media (min-width: 1133px) {
+@media (min-width: 900px) {
     .mat-sidenav {
         display: none;
     }
@@ -184,7 +189,7 @@ xng-breadcrumb {
     }
 }
 
-@media (max-width: 1133px) {
+@media (max-width: 900px) {
     .top-menu-item {
         display: none;
     }
