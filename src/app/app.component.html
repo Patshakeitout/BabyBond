@@ -3,7 +3,10 @@
     <mat-sidenav class="sidenav" #sidenav mode="over" [opened]="false" [fixedInViewport]="true" disableClose="false">
         <header class="sidenav-header">
             <div class="sidenav-header-row">
-                <img id="logo" src="favicon.gif" routerLink="/" routerLinkActive="active-link" alt="Logo">
+                <a routerLink="/" routerLinkActive="active-link" class="logo-link" aria-label="BabyBond Home"
+                    (click)="sidenav.close()">
+                    <img id="logo" src="./favicon.gif" alt="BabyBond logo" />
+                </a>
                 <button mat-icon-button (click)="sidenav.close()" aria-label="Zurück zum Inhalt">
                     <mat-icon class="btn-back">arrow_back</mat-icon>
                 </button>
@@ -43,7 +46,7 @@
                 <p><strong>Stillbegleitung Susanne Schauer</strong></p>
                 <p>Elbeblick 5</p>
                 <p>25524 Itzehoe</p>
-                <p><a href="mailto:info&#64;susanneschauer.de">info&#64;susanneschauer.de</a></p>   
+                <p><a href="mailto:info&#64;susanneschauer.de">info&#64;susanneschauer.de</a></p>
             </mat-expansion-panel>
 
         </mat-accordion>

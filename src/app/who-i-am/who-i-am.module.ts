@@ -10,7 +10,11 @@ import { NetworkComponent } from './network/network.component';
 const routes: Routes = [
   {
     path: '',
-    data: { breadcrumb: 'Wer ich bin' },
+    data: { 
+      breadcrumb: {
+        label: 'Wer ich bin',
+        disable: true
+      } },
     children: [
       {
         path: 'ueber-mich',

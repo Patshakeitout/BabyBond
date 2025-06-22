@@ -20,12 +20,13 @@ const routes: Routes = [
   {
     path: 'beratung',
     loadChildren: () =>
-      import('./what-i-do/what-i-do.module').then(m => m.WhatIDoModule)
+      import('./what-i-do/what-i-do.module').then(m => m.WhatIDoModule),
   },
+
   {
     path: 'wer-ich-bin',
     loadChildren: () =>
-      import('./who-i-am/who-i-am.module').then(m => m.WhoIAmModule)
+      import('./who-i-am/who-i-am.module').then(m => m.WhoIAmModule),
   },
   {
     path: 'kontakt',
