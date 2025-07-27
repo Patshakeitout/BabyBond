@@ -4,7 +4,6 @@ import { LandingComponent } from './landing/landing.component';
 import { DisclaimerComponent } from './shared/disclaimer/disclaimer.component';
 import { DataPrivacyPolicyComponent } from './shared/data-privacy-policy/data-privacy-policy.component';
 import { GtcComponent } from './shared/gtc/gtc.component';
-import { ContactComponent } from './contact/contact/contact.component';
 
 const routes: Routes = [
   {
@@ -32,9 +31,27 @@ const routes: Routes = [
     path: 'kontakt',
     loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
   },
-  { path: 'disclaimer', component: DisclaimerComponent },
-  { path: 'data-privacy-policy', component: DataPrivacyPolicyComponent },
-  { path: 'gtc', component: GtcComponent }
+  { path: 'disclaimer', 
+    data: {
+      breadcrumb: {
+        label: 'Impressum'
+      }
+    },
+    component: DisclaimerComponent },
+  { path: 'data-privacy-policy', 
+    data: {
+      breadcrumb: {
+        label: 'Datenschutz'
+      }
+    },
+    component: DataPrivacyPolicyComponent },
+  { path: 'gtc', 
+    data: {
+      breadcrumb: {
+        label: 'AGB'
+      }
+    },
+    component: GtcComponent }
 ];
 
 @NgModule({

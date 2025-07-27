@@ -6,3 +6,24 @@
 h1 {
     text-align: center;
 }
+
+.page-in-work {
+  display: flex;                /* icon + text side by side */
+  align-items: flex-start;     /* align icon with top of text */
+  background-color: #f5f7fa;   /* light, neutral background */
+  border-left: 4px solid #367714; /* accent color bar */
+  padding: 1rem;               /* generous inner spacing */
+  border-radius: 4px;          /* subtle rounding */
+  color: #333;                 /* dark, readable text */
+  font-size: 1rem;             /* base size */
+  line-height: 1.5;            /* comfortable reading */
+  margin: 1rem 0;              /* vertical breathing room */
+}
+
+.page-in-work__icon {
+  flex-shrink: 0;              /* keep icon from shrinking */
+  width: 1.5em;                /* scales with font-size */
+  height: 1.5em;
+  margin-right: 0.75em;        /* space between icon and text */
+  fill: #357714;               /* match accent color */
+}

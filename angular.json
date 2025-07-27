@@ -37,9 +37,10 @@
               "src/assets"
             ],
             "styles": [                     
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/klaro/dist/klaro.css"
             ],
-            "scripts": [],
+            "scripts": ["node_modules/klaro/dist/klaro.js"],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
