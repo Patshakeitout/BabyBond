@@ -1,29 +1,54 @@
-.home-img {
-    display: block;
-    height: 50%;
+.home-layout {
+  padding-bottom: 18px;
+  padding-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  figure {
+    flex: 2;
+    margin: 0;
+  }
+
+  article {
+    flex: 1;
+  }
 }
 
-h1 {
-    text-align: center;
+.home-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5%;
 }
 
 .page-in-work {
-  display: flex;                /* icon + text side by side */
-  align-items: flex-start;     /* align icon with top of text */
-  background-color: #f5f7fa;   /* light, neutral background */
-  border-left: 4px solid #367714; /* accent color bar */
-  padding: 1rem;               /* generous inner spacing */
-  border-radius: 4px;          /* subtle rounding */
-  color: #333;                 /* dark, readable text */
-  font-size: 1rem;             /* base size */
-  line-height: 1.5;            /* comfortable reading */
-  margin: 1rem 0;              /* vertical breathing room */
+  display: flex;
+  align-items: flex-start;
+  background-color: #f5f7fa;
+  border-left: 4px solid #367714;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 4px;
+  color: #333;
+  line-height: 1.5;
+  margin: 0 1rem;
 }
 
 .page-in-work__icon {
-  flex-shrink: 0;              /* keep icon from shrinking */
-  width: 1.5em;                /* scales with font-size */
+  flex-shrink: 0;
+  width: 1.5em;
   height: 1.5em;
-  margin-right: 0.75em;        /* space between icon and text */
-  fill: #357714;               /* match accent color */
+  margin-right: 0.75em;
+  fill: #357714;
 }
