@@ -31,7 +31,7 @@
     </mat-menu>
 
     <!-- Nav: KONTAKT -->
-    <a mat-button class="top-menu-item lato-black" routerLink="/kontakt" routerLinkActive="active-link">
+    <a mat-button class="top-menu-item lato-black" href="/kontakt" (click)="reloadContact($event)">
         KONTAKT
     </a>
     <button mat-icon-button (click)="toggleMenu()" id="menuIcon" aria-label="Toggle menu">
