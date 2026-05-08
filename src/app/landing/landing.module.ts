@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { LandingComponent } from './landing.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserAnimationsModule,
     CommonModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ]
 })
 export class LandingModule { }

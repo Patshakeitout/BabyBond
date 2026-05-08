@@ -1,18 +1,11 @@
 .home-layout {
-  padding-bottom: 18px;
-  padding-top: 18px;
+  padding-block: 1.125rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-    align-items: flex-start;
-  }
+  gap: 1.5rem;
 
   h1 {
     font-size: 2rem;
-    text-align: center;
   }
 
   figure {
@@ -22,6 +15,35 @@
 
   article {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    background-color: #f0f7ec;
+    border-radius: 8px;
+    padding: 1rem;
+
+    ul {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.125rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  @media (max-width: 768px) {
+    .in-work {
+      margin-top: 4rem;
+    }
   }
 }
 
@@ -32,23 +54,48 @@
   border-radius: 5%;
 }
 
-.page-in-work {
-  display: flex;
-  align-items: flex-start;
-  background-color: #f5f7fa;
-  border-left: 4px solid #367714;
-  font-size: 1.2rem;
-  padding: 1rem;
-  border-radius: 4px;
-  color: #333;
-  line-height: 1.5;
-  margin: 0 1rem;
+.date-icon {
+  font-size: 1.125rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  color: #367714;
+  margin-left: 0.5rem;
 }
 
-.page-in-work__icon {
-  flex-shrink: 0;
-  width: 1.5em;
-  height: 1.5em;
-  margin-right: 0.75em;
-  fill: #357714;
+.buchung-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: 1.25rem;
+  text-decoration: none;
+  font-size: 1.25rem;
+
+  mat-icon {
+    font-size: 1.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.in-work {
+  margin-top: auto;
+
+  .page-in-work {
+    display: flex;
+    align-items: flex-start;
+    background-color: #f5f7fa;
+    border-left: 4px solid #367714;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-radius: 4px;
+    color: #333;
+    line-height: 1.5;
+    margin: 1rem 0;
+  }
+
+  .page-in-work__icon {
+    flex-shrink: 0;
+    margin-right: 0.75em;
+    color: #357714;
+  }
 }
